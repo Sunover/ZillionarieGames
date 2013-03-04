@@ -1,5 +1,8 @@
 package TerritoryPacket;
 
+import MapPacket.MapBsc;
+import PlayerPacket.Player;
+
 /**
  * Created with IntelliJ IDEA.
  * User: nove
@@ -9,10 +12,25 @@ package TerritoryPacket;
  */
 public class MineralEstate extends TerritoryBsc {
     private  int PointsValue=0;
-    public  MineralEstate(int  points){
+    /*public  MineralEstate(int  points){
+             id=7;
+             Display="$";
              PointsValue=points;
+    }*/
+    public MineralEstate(int ID){
+    	super(ID,'$');
+    }
+    public MineralEstate(int ID, int Point){
+    	super(ID,'$');
+    	this.PointsValue = Point;
     }
     public int GetTheGivenPoints (){
         return PointsValue;
     }
+	@Override
+	public void EnterTerritory(Player player,MapBsc Map) {
+		MineralEstate Mineral = (MineralEstate) Map.GetMapPointList().get(super.id);
+		int Point = Mineral.GetTheGivenPoints() + player.GetPoint();
+		player.SetPoint(Point);
+	}
 }

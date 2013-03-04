@@ -1,5 +1,8 @@
 package TerritoryPacket;
 
+import MapPacket.MapBsc;
+import PlayerPacket.Player;
+
 /**
  * Created with IntelliJ IDEA.
  * User: nove
@@ -8,4 +11,12 @@ package TerritoryPacket;
  * To change this template use File | Settings | File Templates.
  */
 public class MagicHouse extends TerritoryBsc {
+    public MagicHouse(int ID){
+    	super(ID,'M');
+    }
+
+	@Override
+	public void EnterTerritory(Player player,MapBsc Map) {
+		
+	}
 }

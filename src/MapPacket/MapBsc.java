@@ -1,24 +1,19 @@
 package MapPacket;
 
-public class MapBsc {
-	/*private int id;
-	private int basePrice;//base Price
-	private int ownBy;
-	private int type;
+import java.util.ArrayList;
 
-	public MapBsc(int id, int price,int type){
-		this.id = id;
-		this.basePrice = price;
-		this.type = type;
+import TerritoryPacket.TerritoryBsc;
+
+public abstract class MapBsc {
+	private ArrayList<TerritoryBsc> MapPointList=new ArrayList<TerritoryBsc>();
+
+	public ArrayList<TerritoryBsc> GetMapPointList() {
+		return MapPointList;
 	}
 
-	public int getBasePrice() {
-		return basePrice;
+	public void SetMapPointList(ArrayList<TerritoryBsc> mapPointList) {
+		MapPointList = mapPointList;
 	}
-
-	public int getType() {
-		return type;
-	}    */
-
-
+	
+	public abstract ArrayList<Character> GetMapPointDisplayList();
 }
