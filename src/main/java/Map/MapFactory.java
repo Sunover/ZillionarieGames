@@ -1,4 +1,4 @@
-package main.java.Map;
+package Map;
 
 public class MapFactory {
 	public static MapBsc MakeMap(int typeId){

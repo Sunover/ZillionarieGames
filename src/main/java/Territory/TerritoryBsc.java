@@ -1,8 +1,8 @@
-package main.java.Territory;
+package Territory;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
-import main.java.Prop.Prop;
+import Map.MapBsc;
+import Player.Player;
+import Prop.Prop;
 
 public abstract class TerritoryBsc {
     protected int id;

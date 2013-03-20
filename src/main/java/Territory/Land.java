@@ -1,11 +1,11 @@
-package main.java.Territory;
+package Territory;
 
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
+import Map.MapBsc;
+import Player.Player;
 
 public class Land extends TerritoryBsc{
 
@@ -17,13 +17,14 @@ public class Land extends TerritoryBsc{
     private final static int COTTAGE = 1;
 	private final static int HOUSE = 2;
 	private final static int SKYSCRAPPER = 3;
+    private final static int MAXLEVEL=3;
 	
 	private final static int ownBySystem = -1;
 
 	public Land(){
 		super(id,'0');
 	}
-	
+
     public Land(int id,int basePrice, int type) {
     	super(id,'0');
         this.basePrice = basePrice;
@@ -83,7 +84,14 @@ public class Land extends TerritoryBsc{
 		return "地产：空地"+areaCount+"处；茅屋"+cottageCount+"处；洋房"+houseCount+"处；摩天楼"+skyScrapperCount+"处。";
 	}
 
+    public boolean overMaxLevel(){
+        if(this.type==MAXLEVEL)
+            return true;
+        return false;
+    }
 	public void upgradeType() {
+        if(overMaxLevel())
+            System.out.println("此地已是最高等级，不能在升级了！");
 		this.type++;
 	}
 

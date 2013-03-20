@@ -1,9 +1,9 @@
-package main.java.Control;
+package Control;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
-import main.java.Prop.Prop;
-import main.java.Territory.TerritoryBsc;
+import Map.MapBsc;
+import Player.Player;
+import Prop.Prop;
+import Territory.TerritoryBsc;
 
 public class BlockCommand extends Command {
 

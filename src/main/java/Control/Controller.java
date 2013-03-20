@@ -1,4 +1,4 @@
-package main.java.Control;
+package Control;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.Map.FirstMap;
-import main.java.Player.Player;
-import main.java.Territory.Land;
-import main.java.Territory.TerritoryBsc;
+import Map.FirstMap;
+import Player.Player;
+import Territory.Land;
+import Territory.TerritoryBsc;
 
 public class Controller {
 

@@ -1,17 +1,18 @@
-package main.java.Map;
+package Map;
 
 import java.util.ArrayList;
 
-import main.java.Territory.GiftHouse;
-import main.java.Territory.Hospital;
-import main.java.Territory.Land;
-import main.java.Territory.MagicHouse;
-import main.java.Territory.MineralEstate;
-import main.java.Territory.Prison;
-import main.java.Territory.Start;
-import main.java.Territory.TerritoryBsc;
-import main.java.Territory.ToolsHouse;
-import main.java.other.PrintInConsoleWithColor;
+import Territory.TerritoryBsc;
+import Territory.GiftHouse;
+import Territory.Hospital;
+import Territory.Land;
+import Territory.MagicHouse;
+import Territory.MineralEstate;
+import Territory.Prison;
+import Territory.Start;
+import Territory.TerritoryBsc;
+import Territory.ToolsHouse;
+import other.PrintInConsoleWithColor;
 
 public class FirstMap extends MapBsc {
 
@@ -165,8 +166,8 @@ public class FirstMap extends MapBsc {
 		for(int i = 0; i < 8 * 29; i++){
 			if(i != 0 && i % 29 == 0)
 				System.out.println();
-          PrintInConsoleWithColor.CLibrary.Instance.printfc((mapPointList.get(i).getOwnBy()+1),String.valueOf(printPositions[i]));
-
+           System.out.print(printPositions[i]);
+         //PrintInConsoleWithColor.CLibrary.Instance.printfc((mapPointList.get(i).getOwnBy()+1),String.valueOf(printPositions[i]));
 		}
 		System.out.println();
 	}

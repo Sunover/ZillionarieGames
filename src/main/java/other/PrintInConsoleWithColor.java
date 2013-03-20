@@ -1,4 +1,4 @@
-package main.java.other;
+package other;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;

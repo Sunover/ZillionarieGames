@@ -1,7 +1,7 @@
-package main.java.Control;
+package Control;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
+import Map.MapBsc;
+import Player.Player;
 
 public class QueryCommand extends Command {
 	

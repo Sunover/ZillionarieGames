@@ -1,7 +1,7 @@
-package main.java.Territory;
+package Territory;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
+import Map.MapBsc;
+import Player.Player;
 
 /**
  * Created with IntelliJ IDEA.

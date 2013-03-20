@@ -1,10 +1,10 @@
-package main.java.Player;
+package Player;
 
 import java.util.Hashtable;
 
-import main.java.Map.MapBsc;
-import main.java.Prop.Prop;
-import main.java.Territory.Land;
+import Map.MapBsc;
+import Prop.Prop;
+import Territory.Land;
 
 public class Player {
 
@@ -156,19 +156,25 @@ public class Player {
 	}
 	
 	public void buyProp() {
-		Prop prop = new Prop(Integer.parseInt(this.userInput.getInput()));
-		if(checkPropCanBuy() && this.point >= prop.getPoint()){
-			this.point -= prop.getPoint();
-			int count = this.propHashTable.get(prop.getId()) + 1;
-			this.propHashTable.remove(prop.getId());
-			this.propHashTable.put(prop.getId(), count);
-			System.out.println("购买"+prop.getName()+"成功");
-		}
+        choiceToBuy(Integer.parseInt(this.userInput.getInput()));
 	}
-	
+
+    public void choiceToBuy(int index){
+        Prop prop = new Prop(index);
+        if(checkPropCanBuy() && this.point >= prop.getPoint()){
+            this.point -= prop.getPoint();
+            int count = this.propHashTable.get(prop.getId()) + 1;
+            this.propHashTable.remove(prop.getId());
+            this.propHashTable.put(prop.getId(), count);
+            System.out.println("购买"+prop.getName()+"成功");
+        }
+    }
 	public void useProp(Prop p){
 		try{
-			this.propHashTable.remove(p);
+            int count = this.propHashTable.get(p.getId()) - 1;
+            this.propHashTable.remove(p.getId());
+            this.propHashTable.put(p.getId(), count);
+			//this.propHashTable.remove(p);
 		}catch(Exception e){
 			System.out.println("没有该道具，无法使用");
 			return;

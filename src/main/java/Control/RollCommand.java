@@ -1,8 +1,8 @@
-package main.java.Control;
+package Control;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
-import main.java.Territory.TerritoryBsc;
+import Map.MapBsc;
+import Player.Player;
+import Territory.TerritoryBsc;
 
 public class RollCommand extends Command {
 	public RollCommand(){}

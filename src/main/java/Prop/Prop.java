@@ -1,4 +1,4 @@
-package main.java.Prop;
+package Prop;
 
 import java.util.ArrayList;
 import java.util.Hashtable;

@@ -1,7 +1,8 @@
-package main.java.Territory;
+package Territory;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
+
+import Map.MapBsc;
+import Player.Player;
 
 public class GiftHouse extends TerritoryBsc {
     public Player currentPlayer;
@@ -22,19 +23,24 @@ public class GiftHouse extends TerritoryBsc {
 		player.getUserInput().toolsHouseInputValidated();
 		if(player.getUserInput().getValidatedInput())
 		{
-			switch(Integer.parseInt(player.getUserInput().getInput())){
-			case MONEYAWARD:
-				player.gainMoney();
-				break;
-			case POINTAWARD:
-				player.gainPoint();
-				break;
-			case BILLIKENAWARD:
-				player.getBilliken();
-				break;
-			}
+			  excuteTheChoice(Integer.parseInt(player.getUserInput().getInput()),player);
 		}
-	}
+    }
+        public void excuteTheChoice(Integer inChoiceIndex,Player player){
+
+            switch(inChoiceIndex){
+            case MONEYAWARD:
+                player.gainMoney();
+                break;
+            case POINTAWARD:
+                player.gainPoint();
+                break;
+            case BILLIKENAWARD:
+                player.getBilliken();
+                break;
+        }
+    }
+
 
 
 

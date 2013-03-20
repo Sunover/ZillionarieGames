@@ -1,4 +1,4 @@
-package main.java.Player;
+package Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;

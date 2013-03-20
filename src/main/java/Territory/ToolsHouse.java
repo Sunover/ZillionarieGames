@@ -1,9 +1,9 @@
-package main.java.Territory;
+package Territory;
 
-import main.java.Map.MapBsc;
-import main.java.Player.Player;
-import main.java.Player.UserInput;
-import main.java.Prop.Prop;
+import Map.MapBsc;
+import Player.Player;
+import Player.UserInput;
+import Prop.Prop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +27,8 @@ public class ToolsHouse extends TerritoryBsc  {
 
 	@Override
 	public void enterTerritory(Player player,MapBsc map) {
-		if(player.getPoint() < minPoint()){
-			Prop p = new Prop(Integer.parseInt(player.getUserInput().getInput()));
-			System.out.println("您当前剩余的点数为"+player.getPoint()+"， 不足以购买"+
-							p.getName()+"道具。");
-		}
+		 if(!isAffordtheprice(Integer.parseInt(player.getUserInput().getInput()),player.getPoint()))
+               return;
 		while(!player.getUserInput().getValidatedInput()
 				&& player.getUserInput().getInput() != UserInput.EXIT
 				&& player.getPoint() >= minPoint()){
@@ -42,7 +39,20 @@ public class ToolsHouse extends TerritoryBsc  {
 			player.getUserInput().toolsHouseInputValidated();
 			player.buyProp();
 		}
+    }
+        private boolean isAffordtheprice(Integer index,Integer point){
+            if(point<minPoint())
+            {
+                Prop p = new Prop(index);
+                System.out.println("您当前剩余的点数为"+point+"， 不足以购买"+
+                p.getName()+"道具。");
+                return false;
+            }
+            return true;
+    }
+
+
+
 		
-		
-	}
+
 }

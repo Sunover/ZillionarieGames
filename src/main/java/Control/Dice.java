@@ -1,4 +1,4 @@
-package main.java.Control;
+package Control;
 
 /**
  * Created with IntelliJ IDEA.

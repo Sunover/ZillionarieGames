@@ -1,8 +1,8 @@
-package main.java.Map;
+package Map;
 
 import java.util.ArrayList;
 
-import main.java.Territory.TerritoryBsc;
+import Territory.TerritoryBsc;
 
 public abstract class MapBsc {
 	private ArrayList<TerritoryBsc> mapPointList =new ArrayList<TerritoryBsc>();
