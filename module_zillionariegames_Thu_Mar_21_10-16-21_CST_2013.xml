@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_zillionariegames" default="compile.module.zillionariegames">
+  <dirname property="module.zillionariegames.basedir" file="${ant.file.module_zillionariegames}"/>
+  
+  <property name="module.jdk.home.zillionariegames" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.zillionariegames" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.zillionariegames" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.zillionariegames" value="${compiler.args}"/>
+  
+  <property name="zillionariegames.output.dir" value="${module.zillionariegames.basedir}/out/production/ZillionarieGames"/>
+  <property name="zillionariegames.testoutput.dir" value="${module.zillionariegames.basedir}/out/test/ZillionarieGames"/>
+  
+  <path id="zillionariegames.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="zillionariegames.module.production.classpath">
+    <path refid="${module.jdk.classpath.zillionariegames}"/>
+    <path refid="library.jna.classpath"/>
+    <pathelement location="${idea.home}/plugins/testng/lib/testng-jdk15.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+  </path>
+  
+  <path id="zillionariegames.runtime.production.module.classpath">
+    <pathelement location="${zillionariegames.output.dir}"/>
+    <path refid="library.jna.classpath"/>
+    <pathelement location="${idea.home}/plugins/testng/lib/testng-jdk15.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+  </path>
+  
+  <path id="zillionariegames.module.classpath">
+    <path refid="${module.jdk.classpath.zillionariegames}"/>
+    <pathelement location="${zillionariegames.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <path refid="library.jna.classpath"/>
+    <pathelement location="${idea.home}/plugins/testng/lib/testng-jdk15.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+  </path>
+  
+  <path id="zillionariegames.runtime.module.classpath">
+    <pathelement location="${zillionariegames.testoutput.dir}"/>
+    <pathelement location="${zillionariegames.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <path refid="library.jna.classpath"/>
+    <pathelement location="${idea.home}/plugins/testng/lib/testng-jdk15.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+    <pathelement location="${idea.home}/lib/junit.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.zillionariegames">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.zillionariegames">
+    <patternset refid="excluded.from.module.zillionariegames"/>
+  </patternset>
+  
+  <path id="zillionariegames.module.sourcepath">
+    <dirset dir="${module.zillionariegames.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="zillionariegames.module.test.sourcepath">
+    <dirset dir="${module.zillionariegames.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.zillionariegames" depends="compile.module.zillionariegames.production,compile.module.zillionariegames.tests" description="Compile module ZillionarieGames"/>
+  
+  <target name="compile.module.zillionariegames.production" depends="register.custom.compilers" description="Compile module ZillionarieGames; production classes">
+    <mkdir dir="${zillionariegames.output.dir}"/>
+    <javac2 destdir="${zillionariegames.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.zillionariegames}/javac">
+      <compilerarg line="${compiler.args.zillionariegames}"/>
+      <bootclasspath refid="zillionariegames.module.bootclasspath"/>
+      <classpath refid="zillionariegames.module.production.classpath"/>
+      <src refid="zillionariegames.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.zillionariegames"/>
+    </javac2>
+    
+    <copy todir="${zillionariegames.output.dir}">
+      <fileset dir="${module.zillionariegames.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.zillionariegames.tests" depends="register.custom.compilers,compile.module.zillionariegames.production" description="compile module ZillionarieGames; test classes" unless="skip.tests">
+    <mkdir dir="${zillionariegames.testoutput.dir}"/>
+    <javac2 destdir="${zillionariegames.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.zillionariegames}/javac">
+      <compilerarg line="${compiler.args.zillionariegames}"/>
+      <bootclasspath refid="zillionariegames.module.bootclasspath"/>
+      <classpath refid="zillionariegames.module.classpath"/>
+      <src refid="zillionariegames.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.zillionariegames"/>
+    </javac2>
+    
+    <copy todir="${zillionariegames.testoutput.dir}">
+      <fileset dir="${module.zillionariegames.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.zillionariegames" description="cleanup module">
+    <delete dir="${zillionariegames.output.dir}"/>
+    <delete dir="${zillionariegames.testoutput.dir}"/>
+  </target>
+</project>

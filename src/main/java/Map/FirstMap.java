@@ -10,7 +10,6 @@ import Territory.MagicHouse;
 import Territory.MineralEstate;
 import Territory.Prison;
 import Territory.Start;
-import Territory.TerritoryBsc;
 import Territory.ToolsHouse;
 import other.PrintInConsoleWithColor;
 
