@@ -36,7 +36,7 @@ public class GiftHouse extends TerritoryBsc {
                 player.gainPoint();
                 break;
             case BILLIKENAWARD:
-                player.getBilliken();
+                player.gainBilliken();
                 break;
         }
     }

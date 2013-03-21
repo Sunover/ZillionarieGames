@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="Control.DiceTest" tests="1" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.001">
+  <properties/>
+  <testcase name="test_the_return_of_function_Run_is_from_1_to_6" classname="Control.DiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

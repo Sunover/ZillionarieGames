@@ -1,4 +1,4 @@
-package Map;
+﻿package Map;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class FirstMap extends MapBsc {
 	private ArrayList<Character> mapPointDisplayList = new ArrayList<Character>();
 	//Record the original one
 	private ArrayList<Character> mapPointDisplayListNow = new ArrayList<Character>();
-	//根据玩家行走情况记录最新的地图显示状况
+
 		   
 	public ArrayList<Character> getMapPointDisplayList(){
 		return mapPointDisplayList;
@@ -35,7 +35,7 @@ public class FirstMap extends MapBsc {
 		    
 	public void init(){
 		Start startObject = new Start();
-		mapPointList.add(startObject); //空地
+		mapPointList.add(startObject); //
 		
 		mapPointDisplayList.add(startObject.getDisplayNow());
 	    
@@ -47,18 +47,18 @@ public class FirstMap extends MapBsc {
 		    
 		    mapPointDisplayListNow.add(TerritoryBsc.AREA);
 		    
-		}  //第一地段
-		       //MapPointList.add(new Hospital(3,stopMemberMap)) ; //医院
+		}
+		       //MapPointList.add(new Hospital(3,stopMemberMap)) ;
 		mapPointList.add(new Hospital(14)) ;
 		mapPointDisplayList.add(TerritoryBsc.HOSPITAL);
 		mapPointDisplayListNow.add(TerritoryBsc.HOSPITAL);
 		       
 		for(int i=15;i<=27;i++){
-			mapPointList.add(new Land(i, 200, 0)); //第二地段
+			mapPointList.add(new Land(i, 200, 0));
 			mapPointDisplayList.add(TerritoryBsc.AREA);
 			mapPointDisplayListNow.add(TerritoryBsc.AREA);
 		}
-		mapPointList.add(new ToolsHouse(28));   //道具屋
+		mapPointList.add(new ToolsHouse(28));
 		mapPointDisplayList.add(TerritoryBsc.PROP);
 		mapPointDisplayListNow.add(TerritoryBsc.PROP);
 		        
@@ -67,59 +67,59 @@ public class FirstMap extends MapBsc {
 			mapPointList.add(new Land(i, 500, 0));
 		    mapPointDisplayList.add(TerritoryBsc.AREA);
 		    mapPointDisplayListNow.add(TerritoryBsc.AREA);
-		}//第三地段
-		mapPointList.add(new GiftHouse(35));   //礼品屋
+		}//����ض�
+		mapPointList.add(new GiftHouse(35));
 		mapPointDisplayList.add(TerritoryBsc.GIFT);
 		mapPointDisplayListNow.add(TerritoryBsc.GIFT);
 		        
 		for(int i=36;i<=48;i++){
-		     mapPointList.add(new Land(i, 300, 0));//第四地段
+		     mapPointList.add(new Land(i, 300, 0));
 		     mapPointDisplayList.add(TerritoryBsc.AREA);
 		     mapPointDisplayListNow.add(TerritoryBsc.AREA);
 		}
 		        
-		mapPointList.add(new Prison(49));    //监狱
+		mapPointList.add(new Prison(49));
 		mapPointDisplayList.add(TerritoryBsc.PRITISION);
 		mapPointDisplayListNow.add(TerritoryBsc.PRITISION);
 		        
 		for(int i=50;i<=62;i++) {
-		    mapPointList.add(new Land(i, 300, 0));//第五地段
+		    mapPointList.add(new Land(i, 300, 0));
 		     mapPointDisplayList.add(TerritoryBsc.AREA);
 		     mapPointDisplayListNow.add(TerritoryBsc.AREA);
 		}
-		mapPointList.add(new MagicHouse(63));    //魔法屋
+		mapPointList.add(new MagicHouse(63));
 		mapPointDisplayList.add(TerritoryBsc.MAGGIC);
 		mapPointDisplayListNow.add(TerritoryBsc.MAGGIC);
 
-		//矿地
-		mapPointList.add(new MineralEstate(69, 60));    //矿地
+
+		mapPointList.add(new MineralEstate(69, 60));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		        
-		mapPointList.add(new MineralEstate(68, 80));    //矿地
+		mapPointList.add(new MineralEstate(68, 80));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		        
-		mapPointList.add(new MineralEstate(67, 40));    //矿地
+		mapPointList.add(new MineralEstate(67, 40));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		        
-		mapPointList.add(new MineralEstate(66, 100));    //矿地
+		mapPointList.add(new MineralEstate(66, 100));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		        
-		mapPointList.add(new MineralEstate(65, 80));    //矿地
+		mapPointList.add(new MineralEstate(65, 80));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		        
-		mapPointList.add(new MineralEstate(64, 20));    //矿地
+		mapPointList.add(new MineralEstate(64, 20));
 		mapPointDisplayList.add(TerritoryBsc.MINE);
 		mapPointDisplayListNow.add(TerritoryBsc.MINE);
 		
 	}
-	private char[][] positions = new char[8][29];//存放每个位置的字符
-	private char[] printPositions = new char[8 * 29];//将2维变成1维
-	private int[][] positionsInt = new int[8][29];//存放每个位置的 土地编号
+	private char[][] positions = new char[8][29];
+	private char[] printPositions = new char[8 * 29];
+	private int[][] positionsInt = new int[8][29];
 
 	public void setPositions(){
 		for(int i = 0; i < 29; i++){
@@ -165,8 +165,8 @@ public class FirstMap extends MapBsc {
 		for(int i = 0; i < 8 * 29; i++){
 			if(i != 0 && i % 29 == 0)
 				System.out.println();
-           System.out.print(printPositions[i]);
-         //PrintInConsoleWithColor.CLibrary.Instance.printfc((mapPointList.get(i).getOwnBy()+1),String.valueOf(printPositions[i]));
+            System.out.print(printPositions[i]);
+        // PrintInConsoleWithColor.CLibrary.Instance.printfc((mapPointList.get(i).getOwnBy()+1),String.valueOf(printPositions[i]));
 		}
 		System.out.println();
 	}

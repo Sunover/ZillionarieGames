@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="Territory.LandTest" tests="9" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.002">
+  <properties/>
+  <testcase name="test_function_calculateFixedAssets" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_returnAssets_ownby_is_none" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_returnAssets_and_type_is_0" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_pass_free_of_area_is_150" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_pass_free_of_cottage_is_300" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_pass_free_of_house_is_450" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_pass_free_of_skyscrapper_is_600" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_returnAssets_and_setBomb_is_null" classname="Territory.LandTest" time="0.0"/>
+  <testcase name="test_returnAssets_and_RoadBlock_is_null" classname="Territory.LandTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

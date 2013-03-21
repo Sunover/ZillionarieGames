@@ -17,5 +17,8 @@ public class PrintInConsoleWithColor {
         int printfc(int color,String b);         //0为默认颜色，1为蓝色，2为绿色，3为红色；
     }
 
-
+    public static void main(String[] args){
+        String a="aaaa";
+        PrintInConsoleWithColor.CLibrary.Instance.printfc(0,a);
+    }
 }

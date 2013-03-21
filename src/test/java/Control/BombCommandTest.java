@@ -20,29 +20,28 @@ import static org.junit.Assert.assertThat;
  */
 public class BombCommandTest extends TestCase {
     Player player1=new Player(1);
+
     Player player2=new Player(2);
     FirstMap map=new FirstMap();
-    BombCommand bomb=new BombCommand(9,player1,map);
     @Before
-    @Test
-    public void test_put_bomb_successful(){
-        //Given
-        BlockCommand blockcommand=new BlockCommand(10,player1,map);
-        //When
-        TerritoryBsc territory = map.getMapPointList().get(10);
-        Prop bomb = territory.getBomb();
-        //Then
-        assertNotNull(bomb);
-
-    }
-
     @Test
     public void  test_display_when_bomb_on_terrtory(){
         //Given
         TerritoryBsc territory = map.getMapPointList().get(9);
         //When
+        BombCommand bombCommand=new BombCommand(9,player1,map);
         //Then
         assertThat('@',is(territory.getDisplayNow()));
+    }
+    @Test
+    public void test_put_bomb_successful(){
+        //Given
+        TerritoryBsc territory = map.getMapPointList().get(9);
+        //When
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        Prop bomb = territory.getBomb();
+        //Then
+        assertThat(3,is(bomb.getId()));
     }
 
     @Test
@@ -50,7 +49,8 @@ public class BombCommandTest extends TestCase {
         // Given
         player1.setPosition(9);
         //When
-        bomb.actCommand(player1,map);
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        bombCommand.actCommand(player1,map);
         //Then
         assertThat(0,is(player1.getStopTimes())) ;
     }
@@ -60,7 +60,8 @@ public class BombCommandTest extends TestCase {
         // Given
         player2.setPosition(9);
         //When
-        bomb.actCommand(player2,map);
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        bombCommand.actCommand(player2,map);
         //Then
         assertThat(3,is(player2.getStopTimes())) ;
     }
@@ -70,7 +71,8 @@ public class BombCommandTest extends TestCase {
         // Given
         player2.setPosition(9);
         //When
-        bomb.actCommand(player2,map);
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        bombCommand.actCommand(player2,map);
         //Then
         assertThat(14,is(player2.getPosition()));
     }
@@ -80,7 +82,8 @@ public class BombCommandTest extends TestCase {
         // Given
         player2.setPosition(9);
         //When
-        bomb.actCommand(player2,map);
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        bombCommand.actCommand(player2,map);
         //Then
         assertNull(map.getMapPointList().get(9).getBomb());
     }
@@ -91,7 +94,8 @@ public class BombCommandTest extends TestCase {
         player2.setPosition(9);
         TerritoryBsc territory = map.getMapPointList().get(9);
         //When
-        bomb.actCommand(player2,map);
+        BombCommand bombCommand=new BombCommand(9,player1,map);
+        bombCommand.actCommand(player2,map);
         //Then
         assertThat('0', is(territory.getDisplayNow()));
     }

@@ -88,7 +88,7 @@ public class LandTest extends TestCase {
         landHashTable.put(land.getId(),land);
         land.returnFixedAssets(landHashTable);
         //Then
-        assertNull(is(land.getBomb()));
+        assertNull(land.getBomb());
     }
 
     @Test
@@ -100,7 +100,7 @@ public class LandTest extends TestCase {
         landHashTable.put(land.getId(),land);
         land.returnFixedAssets(landHashTable);
         //Then
-        assertNull(is(land.getRoadBlock()));
+        assertNull(land.getRoadBlock());
     }
 
     @Test

@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="Territory.HospitalTest" tests="1" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.0">
+  <properties/>
+  <testcase name="test_enter_into_hospital_to_stop_3_days" classname="Territory.HospitalTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

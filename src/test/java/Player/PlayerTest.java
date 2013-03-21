@@ -43,10 +43,11 @@ public class PlayerTest extends TestCase {
         Player player1=new Player(1);
          player1.setMoney(1000);
         //When
-        player1.buyArea(land,map);
         player1.getUserInput().setInput("Y");
+        player1.buyArea(land,map);
+        String strFixAssert= player1.getFixedAssets();
         //Then
-        assertThat("地产：空地1处；茅屋0处；洋房0处；摩天楼0处。",is(player1.getFixedAssets()));
+        assertThat("地产：空地1处；茅屋0处；洋房0处；摩天楼0处。",is(strFixAssert));
     }
 
     @Test
