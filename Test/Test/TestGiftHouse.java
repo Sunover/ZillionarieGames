@@ -1,8 +1,8 @@
 package Test;
 
-import TerritoryPacket.GiftHouse;
-import MapPacket.FirstMap;
-import PlayerPacket.Player;
+import main.java.Territory.GiftHouse;
+import main.java.Map.FirstMap;
+import main.java.Player.Player;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class TestGiftHouse {
         GiftHouse gitHouse=new GiftHouse(35);
         Player player=new Player(1);
         gitHouse.EnterTerritory(player, Map);
-        assertThat(player.GetMoney(),is(4000));
+        assertThat(player.getMoney(),is(4000));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class TestGiftHouse {
         GiftHouse gitHouse=new GiftHouse(35);
         Player player=new Player(1);
         gitHouse.EnterTerritory(player,Map);
-        assertThat(player.GetMoney(),is(200));
+        assertThat(player.getMoney(),is(200));
     }
 
 
@@ -38,7 +38,7 @@ public class TestGiftHouse {
         GiftHouse gitHouse=new GiftHouse(35);
         Player player=new Player(1);
         gitHouse.EnterTerritory(player,Map);
-        assertThat(player.GetMoney(),is(1));
+        assertThat(player.getMoney(),is(1));
     }
 
 

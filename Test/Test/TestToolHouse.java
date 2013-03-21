@@ -1,8 +1,8 @@
 package Test;
 
-import MapPacket.FirstMap;
-import PlayerPacket.Player;
-import TerritoryPacket.ToolsHouse;
+import main.java.Map.FirstMap;
+import main.java.Player.Player;
+import main.java.Territory.ToolsHouse;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -15,10 +15,10 @@ public class TestToolHouse {
     public void Test_buy_one_roadblock(){
         ToolsHouse toolsHouse=new ToolsHouse(28);
         Player player=new Player(1);
-        player.SetPoint(50);
-        player.GetUserInput().SetInput("1");
+        player.setPoint(50);
+        player.getUserInput().setInput("1");
         toolsHouse.EnterTerritory(player, Map);
-        String str = player.GetProp();
+        String str = player.getProp();
         assertThat(str,is(equalTo("道具：路障1个；炸弹0个；机器娃娃0个。")));
     }
 

@@ -1,8 +1,8 @@
 package Test;
 
-import MapPacket.FirstMap;
-import PlayerPacket.Player;
-import TerritoryPacket.Hospital;
+import main.java.Map.FirstMap;
+import main.java.Player.Player;
+import main.java.Territory.Hospital;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -13,7 +13,7 @@ public class TestHosptal {
         Hospital hospital=new Hospital(14);
         Player Q = new Player(1);
         hospital.EnterTerritory(Q, new FirstMap());
-        int StopTime = Q.GetStopTimes();
+        int StopTime = Q.getStopTimes();
         assertThat(StopTime,is(3));
     }
 

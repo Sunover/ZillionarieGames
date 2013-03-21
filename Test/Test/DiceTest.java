@@ -1,6 +1,6 @@
 package Test;
 
-import ControlPacket.Dice;
+import main.java.Control.Dice;
 import junit.framework.TestCase;
 import org.junit.Test;
 

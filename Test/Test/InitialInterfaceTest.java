@@ -1,6 +1,6 @@
 package Test;
 
-import ControlPacket.InitialInterface;
+import main.java.Control.InitialInterface;
 import junit.framework.TestCase;
 
 /**
@@ -13,6 +13,6 @@ import junit.framework.TestCase;
 public class InitialInterfaceTest extends TestCase {
    public void Choice_one_player_to_start_and_return_false(){
        InitialInterface IniteObj=new InitialInterface();
-       IniteObj.ReciveTheInput();
+       IniteObj.reciveTheInput();
    }
 }

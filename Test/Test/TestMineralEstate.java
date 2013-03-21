@@ -1,6 +1,6 @@
 package Test;
 
-import TerritoryPacket.MineralEstate;
+import main.java.Territory.MineralEstate;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -10,7 +10,7 @@ public class TestMineralEstate {
     @Test
     public void Test_minaeralestate_has_20_points(){
        MineralEstate minerlEstateObj=new MineralEstate(20);
-       assertThat(20,is(minerlEstateObj.GetTheGivenPoints()));
+       assertThat(20,is(minerlEstateObj.getTheGivenPoints()));
     }
 
 }

@@ -1,6 +1,6 @@
 package Test;
 
-import MapPacket.FirstMap;
+import main.java.Map.FirstMap;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -20,8 +20,7 @@ public class FirstMapTest  {
       //Given
        //When
         FirstMap mapfirst=new FirstMap();
-        mapfirst.DrawMap();
-
+        mapfirst.drawMap();
        //Then
          //assertThat(70,is(mapfirst.intMapPointCount));
     }

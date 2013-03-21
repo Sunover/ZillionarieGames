@@ -1,7 +1,7 @@
 package Test;
 
-import PlayerPacket.Player;
-import TerritoryPacket.ToolsHouse;
+import main.java.Player.Player;
+import main.java.Territory.ToolsHouse;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;

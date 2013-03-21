@@ -1,7 +1,6 @@
 package Test;
 
 import junit.framework.TestCase;
-import other.PrintInConsoleWithColor;
 
 /**
  * Created with IntelliJ IDEA.

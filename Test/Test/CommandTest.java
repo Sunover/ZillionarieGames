@@ -10,13 +10,13 @@ import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 
 
-import ControlPacket.Command;
-import ControlPacket.CommandFactory;
-import MapPacket.FirstMap;
-import PlayerPacket.Player;
-import PropPacket.Prop;
-import TerritoryPacket.Land;
-import TerritoryPacket.TerritoryBsc;
+import main.java.Control.Command;
+import main.java.Control.CommandFactory;
+import main.java.Map.FirstMap;
+import main.java.Player.Player;
+import main.java.Prop.Prop;
+import main.java.Territory.Land;
+import main.java.Territory.TerritoryBsc;
 
 
 
@@ -32,9 +32,9 @@ public class CommandTest extends TestCase {
 	public void player_begin_roll(){
 		//Given
 		//When
-		Command RollCommand = CommandFactory.MakeCommand("roll", -100, Qianfuren,firstMap);
+		Command RollCommand = CommandFactory.makeCommand("roll", -100, Qianfuren, firstMap);
 		RollCommand.ActCommand(Qianfuren,firstMap);
-		boolean flag = Qianfuren.GetPosition() >= 0 && Qianfuren.GetPosition() <= 69;
+		boolean flag = Qianfuren.getPosition() >= 0 && Qianfuren.getPosition() <= 69;
 		//Then
 		assertTrue(flag);
 	}
@@ -42,27 +42,27 @@ public class CommandTest extends TestCase {
 	public void player_setup_block_and_effect_others(){
 		//Given
 		//When
-		Qianfuren.AddPoint(50);
-		Qianfuren.GetUserInput().SetInput("3");
-		Qianfuren.BuyProp();
+		Qianfuren.addPoint(50);
+		Qianfuren.getUserInput().setInput("3");
+		Qianfuren.buyProp();
 		
-		Command BlockCommand = CommandFactory.MakeCommand("block", 3, Qianfuren,firstMap);
-		ArrayList<TerritoryBsc> MapPointList  = firstMap.GetMapPointList();
+		Command BlockCommand = CommandFactory.makeCommand("block", 3, Qianfuren, firstMap);
+		ArrayList<TerritoryBsc> MapPointList  = firstMap.getMapPointList();
 		TerritoryBsc territory = MapPointList.get(3);
-		int BlockSetUpBy = territory.GetRoadBlock().getSetupBy();
+		int BlockSetUpBy = territory.getRoadBlock().getSetupBy();
 		//Then
 		assertThat(BlockSetUpBy,is(1));
 		
 		Player Atubo = new Player(2);
-		Atubo.SetPosition(3);
+		Atubo.setPosition(3);
 		BlockCommand.ActCommand(Atubo,firstMap);
-		Prop RoadBlock = territory.GetRoadBlock();
+		Prop RoadBlock = territory.getRoadBlock();
 		//Then
 		assertNull(RoadBlock);
 	} 
 	@Test
 	public void return_player_assets_when_query_comman_activate(){
-		Command QueryCommand = CommandFactory.MakeCommand("query", null, Qianfuren, firstMap);
+		Command QueryCommand = CommandFactory.makeCommand("query", null, Qianfuren, firstMap);
 		QueryCommand.ActCommand(Qianfuren, firstMap);
 	}
 
@@ -70,45 +70,45 @@ public class CommandTest extends TestCase {
 	public void player_setup_bomb_and_effect_others(){
 		//Given
 		//When
-		Qianfuren.AddPoint(50);
-		Qianfuren.GetUserInput().SetInput("3");
-		Qianfuren.BuyProp();
+		Qianfuren.addPoint(50);
+		Qianfuren.getUserInput().setInput("3");
+		Qianfuren.buyProp();
 		
-		Command BombCommand = CommandFactory.MakeCommand("bomb", 3, Qianfuren,firstMap);
-		ArrayList<TerritoryBsc> MapPointList  = firstMap.GetMapPointList();
+		Command BombCommand = CommandFactory.makeCommand("bomb", 3, Qianfuren, firstMap);
+		ArrayList<TerritoryBsc> MapPointList  = firstMap.getMapPointList();
 		TerritoryBsc territory = MapPointList.get(3);
-		int BlockSetUpBy = territory.GetBomb().getSetupBy();
+		int BlockSetUpBy = territory.getBomb().getSetupBy();
 		//Then
 		assertThat(BlockSetUpBy,is(1));
 		
 		Player Atubo = new Player(2);
-		Atubo.SetPosition(3);
+		Atubo.setPosition(3);
 		BombCommand.ActCommand(Atubo,firstMap);
-		Prop RoadBlock = territory.GetBomb();
+		Prop RoadBlock = territory.getBomb();
 		//Then
 		assertNull(RoadBlock);
-		assertThat(Atubo.GetPosition(),is(14));
+		assertThat(Atubo.getPosition(),is(14));
 	} 
 	
 	@Test
 	public void player_setup_Robot_and_effect(){
 		//Given
 		//When
-		Qianfuren.AddPoint(50);
-		Qianfuren.GetUserInput().SetInput("3");
-		Qianfuren.BuyProp();
+		Qianfuren.addPoint(50);
+		Qianfuren.getUserInput().setInput("3");
+		Qianfuren.buyProp();
 		
-		CommandFactory.MakeCommand("block", 3, Qianfuren,firstMap);
-		ArrayList<TerritoryBsc> MapPointList  = firstMap.GetMapPointList();
+		CommandFactory.makeCommand("block", 3, Qianfuren, firstMap);
+		ArrayList<TerritoryBsc> MapPointList  = firstMap.getMapPointList();
 		TerritoryBsc territory = MapPointList.get(3);
-		int BlockSetUpBy = territory.GetRoadBlock().getSetupBy();
+		int BlockSetUpBy = territory.getRoadBlock().getSetupBy();
 		//Then
 		assertThat(BlockSetUpBy,is(1));
 		
 		Player Atubo = new Player(2);
-		Command RobotCommand = CommandFactory.MakeCommand("robot", null, Atubo, firstMap);
+		Command RobotCommand = CommandFactory.makeCommand("robot", null, Atubo, firstMap);
 		RobotCommand.ActCommand(Atubo, firstMap);
-		Prop RoadBlock = territory.GetRoadBlock();
+		Prop RoadBlock = territory.getRoadBlock();
 		//Then
 		assertNull(RoadBlock);
 	}
@@ -116,16 +116,16 @@ public class CommandTest extends TestCase {
 	public void return_extra_money_when_sell_area(){
 		//Given
 		Land land = new Land(1,200,0);
-		Qianfuren.GetUserInput().SetInput("Y");
-		Qianfuren.SetMoney(200);
-		Qianfuren.BuyArea(land, firstMap);
+		Qianfuren.getUserInput().setInput("Y");
+		Qianfuren.setMoney(200);
+		Qianfuren.buyArea(land, firstMap);
 		
 		//when
-		Command SellCommand = CommandFactory.MakeCommand("sell", 1, Qianfuren, firstMap);
+		Command SellCommand = CommandFactory.makeCommand("sell", 1, Qianfuren, firstMap);
 		
 		SellCommand.ActCommand(Qianfuren, firstMap);
-		String FixedAssets = Qianfuren.GetFixedAssets();
-		int Money = Qianfuren.GetMoney();
+		String FixedAssets = Qianfuren.getFixedAssets();
+		int Money = Qianfuren.getMoney();
 		//Then
 		assertThat(FixedAssets,is("地产：空地0处；茅屋0处；洋房0处；摩天楼0处。"));
 		assertThat(Money,is(400));
@@ -134,14 +134,14 @@ public class CommandTest extends TestCase {
 	@Test
 	public void return_extra_money_when_sell_prop(){
 		//Given
-		Qianfuren.SetPoint(50);
-		Qianfuren.GetUserInput().SetInput("1");
-		Qianfuren.BuyProp();
+		Qianfuren.setPoint(50);
+		Qianfuren.getUserInput().setInput("1");
+		Qianfuren.buyProp();
 		//when
-		Command SellPropCommand = CommandFactory.MakeCommand("selltool", 1, Qianfuren, firstMap);
+		Command SellPropCommand = CommandFactory.makeCommand("selltool", 1, Qianfuren, firstMap);
 		SellPropCommand.ActCommand(Qianfuren, firstMap);
-		String FixedAssets = Qianfuren.GetProp();
-		int Point = Qianfuren.GetPoint();
+		String FixedAssets = Qianfuren.getProp();
+		int Point = Qianfuren.getPoint();
 		//Then
 		assertThat(FixedAssets,is("道具：路障0个；炸弹0个；机器娃娃0个。"));
 		assertThat(Point,is(50));
