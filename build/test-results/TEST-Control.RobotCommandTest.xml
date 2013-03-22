@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="Control.RobotCommandTest" tests="3" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.001">
+<testsuite name="Control.RobotCommandTest" tests="3" failures="0" errors="0" timestamp="2013-03-22T05:54:32" hostname="nove-PC" time="0.003">
   <properties/>
-  <testcase name="test_put_block_successful_to_clear_bomb_in_10" classname="Control.RobotCommandTest" time="0.0"/>
-  <testcase name="test_put_block_successful_to_clear_roadblock_in_10" classname="Control.RobotCommandTest" time="0.0"/>
+  <testcase name="test_put_block_successful_to_clear_roadblock_in_10" classname="Control.RobotCommandTest" time="0.001"/>
+  <testcase name="test_put_block_successful_to_clear_bomb_in_10" classname="Control.RobotCommandTest" time="0.001"/>
   <testcase name="test_terrory_get_display_is_0_after_actCommand_at_position_10" classname="Control.RobotCommandTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

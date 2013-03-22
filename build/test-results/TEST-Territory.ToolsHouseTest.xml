@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="Territory.ToolsHouseTest" tests="1" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.0">
+<testsuite name="Territory.ToolsHouseTest" tests="1" failures="0" errors="0" timestamp="2013-03-22T05:54:32" hostname="nove-PC" time="0.001">
   <properties/>
-  <testcase name="Test_buy_one_roadblock" classname="Territory.ToolsHouseTest" time="0.0"/>
+  <testcase name="Test_buy_one_roadblock" classname="Territory.ToolsHouseTest" time="0.001"/>
   <system-out><![CDATA[购买路障成功
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

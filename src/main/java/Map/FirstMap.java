@@ -1,4 +1,4 @@
-﻿package Map;
+package Map;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class FirstMap extends MapBsc {
 	private ArrayList<Character> mapPointDisplayList = new ArrayList<Character>();
 	//Record the original one
 	private ArrayList<Character> mapPointDisplayListNow = new ArrayList<Character>();
-
+    public int intMapPointCount=70;
 		   
 	public ArrayList<Character> getMapPointDisplayList(){
 		return mapPointDisplayList;
@@ -67,7 +67,7 @@ public class FirstMap extends MapBsc {
 			mapPointList.add(new Land(i, 500, 0));
 		    mapPointDisplayList.add(TerritoryBsc.AREA);
 		    mapPointDisplayListNow.add(TerritoryBsc.AREA);
-		}//����ض�
+		}//??????
 		mapPointList.add(new GiftHouse(35));
 		mapPointDisplayList.add(TerritoryBsc.GIFT);
 		mapPointDisplayListNow.add(TerritoryBsc.GIFT);
@@ -162,14 +162,66 @@ public class FirstMap extends MapBsc {
 	}
 		    
 	private void doDraw() {
-		for(int i = 0; i < 8 * 29; i++){
-			if(i != 0 && i % 29 == 0)
-				System.out.println();
-            System.out.print(printPositions[i]);
-        // PrintInConsoleWithColor.CLibrary.Instance.printfc((mapPointList.get(i).getOwnBy()+1),String.valueOf(printPositions[i]));
-		}
-		System.out.println();
-	}
+        for(int i=0;i<28;i++)
+        {
+            PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(i).getOwnBy()-1,
+                    String.valueOf(mapPointList.get(i).getDisplayNow()));
+        }
+        PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(28).getOwnBy()-1,
+                String.valueOf(mapPointList.get(28).getDisplayNow()));
+        System.out.print("\n");
+        for(int i=0;i<6;i++){
+            int num=intMapPointCount-i-1;
+            PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(num).getOwnBy()-1,
+                    String.valueOf(mapPointList.get(num).getDisplayNow()));
+           // System.out.print(a);
+            System.out.print("                           ");
+            PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(29+i).getOwnBy()-1,
+                    String.valueOf(mapPointList.get(29+i).getDisplayNow()));
+            System.out.print("\n");
+        }
+        for(int i=63;i>34;i--)
+            PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(i).getOwnBy()-1,
+                    String.valueOf(mapPointList.get(i).getDisplayNow()));
+        System.out.print("\n");
+           /* int mapPointIndex=0;
+            for(int i = 0; i < 8 ; i++){
+                for(int j=0;j<29;j++)  {
+                    if(((i==0||i==7)&&j!=0)||((i==0||i==7)&&j!=28))
+                        System.out.print(' ');
+                     else{
+                       String a= String.valueOf(mapPointList.get(mapPointIndex).getDisplayNow());
+                        PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(mapPointIndex).getOwnBy()-1,String.valueOf(mapPointList.get(mapPointIndex).getDisplayNow()));
+                         mapPointIndex++;
+                      }
+                }
+                System.out.println();
+            }
+                //if(i != 0 && i % 29 == 0)
+
+             //
+
+
+
+           /*   char a=printPositions[i];
+               // String b="rrrr";
+               if(a==' ')
+                 System.out.print(printPositions[i]);
+                else
+                {
+                    int j=mapPointList.get(i).getOwnBy()+1;
+                 //  System.out.print(printPositions[i]) ;
+               // PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(i).getOwnBy()-1,String.valueOf(printPositions[i]));
+                }
+                //  String str=String.valueOf(printPositions[i]);
+                //     String a="aa";
+                //   PrintInConsoleWithColor.CLibrary.Instance.printfc(0,a);
+          }    */
+            System.out.println();
+        }
+
+
+
 	public void drawMap(){
 		setMapPointDisplayListNow();
 		setPositions();

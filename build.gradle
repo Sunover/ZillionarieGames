@@ -1,25 +1,30 @@
 apply plugin: 'java'
+apply plugin:'application'
+
+mainClassName = "Control.Controller"
+
+jar {
+    manifest {
+        attributes("Main-Class": "Control.Controller")
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile(
-            'com.google.guava:guava:13.0.1',
-            'joda-time:joda-time:2.1',
-            'com.sun.jna:jna:3.0.9'
-    )
+    compile  'com.sun.jna:jna:3.0.9'
 
     testCompile(
             'junit:junit:4.10',
             'org.mockito:mockito-all:1.9.0'
+
     )
+   // compile fileTree(dir: 'lib', include: '*.jar')
+}
 
-    tasks.withType(Compile) {
-        options.encoding = "UTF-8"
-    }
 
-    //compile fileTree(dir: 'lib', include: '*.jar')
-
+tasks.withType(Compile) {
+    options.encoding = "UTF-8"
 }

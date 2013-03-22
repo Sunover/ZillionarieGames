@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="Control.SellToolCommandTest" tests="1" failures="0" errors="0" timestamp="2013-03-21T12:51:35" hostname="nove-PC" time="0.001">
+<testsuite name="Control.SellToolCommandTest" tests="1" failures="0" errors="0" timestamp="2013-03-22T05:54:32" hostname="nove-PC" time="0.003">
   <properties/>
-  <testcase name="test_sell_tool_prop" classname="Control.SellToolCommandTest" time="0.001"/>
+  <testcase name="test_sell_tool_prop" classname="Control.SellToolCommandTest" time="0.003"/>
   <system-out><![CDATA[购买路障成功
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
