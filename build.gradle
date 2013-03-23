@@ -1,11 +1,12 @@
 apply plugin: 'java'
-apply plugin:'application'
+//apply plugin:'application'
 
 mainClassName = "Control.Controller"
 
 jar {
     manifest {
-        attributes("Main-Class": "Control.Controller")
+        attributes("Main-Class": "Control.Controller ")
+        attributes("Class-Path": "jna.jar")
     }
 }
 
@@ -14,14 +15,15 @@ repositories {
 }
 
 dependencies {
-    compile  'com.sun.jna:jna:3.0.9'
+    //compile  'com.sun.jna:jna:3.0.9'
 
     testCompile(
             'junit:junit:4.10',
             'org.mockito:mockito-all:1.9.0'
 
     )
-   // compile fileTree(dir: 'lib', include: '*.jar')
+    compile fileTree(dir: 'libs', includes: ['*.jar'])
+
 }
 
 

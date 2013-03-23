@@ -162,13 +162,14 @@ public class FirstMap extends MapBsc {
 	}
 		    
 	private void doDraw() {
-        for(int i=0;i<28;i++)
+        for(int i=0;i<29;i++)
         {
-            PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(i).getOwnBy()-1,
+           // PrintInConsoleWithColor.CLibrary.Instance.printfc(1,"aaaa");
+            int a=mapPointList.get(i).getOwnBy()-1;
+        //    PrintInConsoleWithColor.CLibrary.Instance.printfc(1,String.valueOf(a));
+            PrintInConsoleWithColor.CLibrary.Instance.printfc(a,
                     String.valueOf(mapPointList.get(i).getDisplayNow()));
         }
-        PrintInConsoleWithColor.CLibrary.Instance.printfc(mapPointList.get(28).getOwnBy()-1,
-                String.valueOf(mapPointList.get(28).getDisplayNow()));
         System.out.print("\n");
         for(int i=0;i<6;i++){
             int num=intMapPointCount-i-1;

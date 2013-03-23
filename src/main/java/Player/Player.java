@@ -100,7 +100,7 @@ public class Player {
 	}
 
 	public void buyArea(Land land, MapBsc map) {
-		if(this.userInput.getInput() == UserInput.YES ){
+		if(this.userInput.getInput().equals(UserInput.YES) ){
 			if(this.money >= land.getBasePrice()){
 				this.money -= land.getBasePrice();
 				land.setOwnBy(this.id);
@@ -112,7 +112,7 @@ public class Player {
 	}
 	
 	public void updateArea(Land land, MapBsc map) {
-		if(this.userInput.getInput() == UserInput.YES){
+		if(this.userInput.getInput().equals(UserInput.YES)){
 			if(this.money >= land.getBasePrice() ){
 				this.money -= land.getBasePrice();
 				land.upgradeType();

@@ -1,13 +1,13 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="Player.PlayerTest" tests="8" failures="0" errors="0" timestamp="2013-03-22T05:54:32" hostname="nove-PC" time="0.003">
+<testsuite name="Player.PlayerTest" tests="8" failures="0" errors="0" timestamp="2013-03-23T03:38:02" hostname="nove-PC" time="0.003">
   <properties/>
   <testcase name="test_update_Area_when_money_is_not_sufficient" classname="Player.PlayerTest" time="0.0"/>
-  <testcase name="test_function_calculateFixedAssets" classname="Player.PlayerTest" time="0.0"/>
   <testcase name="test_buy_land_succssful" classname="Player.PlayerTest" time="0.0"/>
   <testcase name="test_update_Area_when_money_is_sufficient" classname="Player.PlayerTest" time="0.001"/>
-  <testcase name="test_sell_area" classname="Player.PlayerTest" time="0.0"/>
-  <testcase name="test_buy_prop" classname="Player.PlayerTest" time="0.001"/>
-  <testcase name="test_sell_prop" classname="Player.PlayerTest" time="0.0"/>
+  <testcase name="test_function_calculateFixedAssets" classname="Player.PlayerTest" time="0.0"/>
+  <testcase name="test_sell_area" classname="Player.PlayerTest" time="0.001"/>
+  <testcase name="test_buy_prop" classname="Player.PlayerTest" time="0.0"/>
+  <testcase name="test_sell_prop" classname="Player.PlayerTest" time="0.001"/>
   <testcase name="test_use_prop" classname="Player.PlayerTest" time="0.0"/>
   <system-out><![CDATA[您的资金不足
 购买路障成功

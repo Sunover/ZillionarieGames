@@ -7,6 +7,7 @@ import Prop.Prop;
 public abstract class TerritoryBsc {
     protected int id;
     private char display;
+    private char olddisplay;
 
     private Prop roadBlock;
     private Prop bomb;
@@ -34,6 +35,7 @@ public abstract class TerritoryBsc {
     public TerritoryBsc(int ID, char display){
         this.id = ID;
         this.display = display;
+        this.olddisplay=display;
     }
     public char getDisplayNow(){
     	return this.display;
@@ -51,7 +53,9 @@ public abstract class TerritoryBsc {
     	this.display = display;
     }
 
-
+    public void resetDisplayNow(){
+        this.display=this.olddisplay;
+    }
 
     public int getId(){
     	return this.id;

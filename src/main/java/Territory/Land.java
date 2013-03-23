@@ -126,13 +126,15 @@ public class Land extends TerritoryBsc{
 	public void enterTerritory(Player player,MapBsc Map) {
 		if(ownBy == ownBySystem)
 		{
+            player.getUserInput().setValidatedInput(false);
 			while(!player.getUserInput().getValidatedInput()){
 				System.out.println("是否购买该处空地，"+this.basePrice+"元（Y/N）？");
 				player.getUserInput().ynValidated();
 			}
 			player.buyArea(this, Map);
 		}
-		else if(ownBy == player.getId()){
+		if(ownBy == player.getId()){
+            player.getUserInput().setValidatedInput(false);
 			while(!player.getUserInput().getValidatedInput()){
 				System.out.println("是否升级该处地产，"+this.basePrice+"元（Y/N）？");
 				player.getUserInput().ynValidated();

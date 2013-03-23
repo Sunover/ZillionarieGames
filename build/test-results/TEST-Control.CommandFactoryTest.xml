@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="Control.CommandFactoryTest" tests="1" failures="0" errors="0" timestamp="2013-03-22T05:54:32" hostname="nove-PC" time="0.004">
+<testsuite name="Control.CommandFactoryTest" tests="1" failures="0" errors="0" timestamp="2013-03-23T03:38:02" hostname="nove-PC" time="0.005">
   <properties/>
-  <testcase name="test_input_Roll_command_return_RollCommand_Object" classname="Control.CommandFactoryTest" time="0.004"/>
+  <testcase name="test_input_Roll_command_return_RollCommand_Object" classname="Control.CommandFactoryTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -61,15 +61,15 @@ public class Controller {
 			choosePlayer(readInput.readLine().trim());
 		}
 		inputFlag = false;
-		
+        FirstMap map = new FirstMap();
+         map.drawMap();
 		while(!isGameEnd){
-			FirstMap map = new FirstMap();
-			map.drawMap();
 			for(int i = 0; i < playerList.size(); i++){
 				Player player = playerList.get(i);
-				playerPositionCheck(player, map);
+			//	playerPositionCheck(player, map);
 				playerGo(player, map);
 				map.drawMap();
+                playerPositionCheck(player, map);
 			}
 			whetherEndGame();
 		}
@@ -87,7 +87,7 @@ public class Controller {
 				command = CommandFactory.makeCommand(input[0], null, player, map);
 			
 			command.actCommand(player, map);
-			map.drawMap();
+		//	map.drawMap();
 			
 			if(input[0].toLowerCase().equals("roll"))
 				inputFlag = true;
